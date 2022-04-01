@@ -1,28 +1,28 @@
-import axios from "axios";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import "./register.css";
+import axios from 'axios'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import './register.css'
 
-export default function Register() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+export default function Register () {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState(false)
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(false);
+    e.preventDefault()
+    setError(false)
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post('/auth/register', {
         username,
         email,
-        password,
-      });
-      res.data && window.location.replace("/login");
+        password
+      })
+      res.data && window.location.replace('/login')
     } catch (err) {
-      setError(true);
+      setError(true)
     }
-  };
+  }
   return (
     <div className="register">
       <span className="registerTitle">Register</span>
@@ -57,7 +57,7 @@ export default function Register() {
           Login
         </Link>
       </button>
-      {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
+      {error && <span style={{ color: 'red', marginTop: '10px' }}>Something went wrong!</span>}
     </div>
-  );
+  )
 }
