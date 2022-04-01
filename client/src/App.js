@@ -1,16 +1,16 @@
-import Home from "./pages/home/Home";
-import TopBar from "./components/topBar/TopBar";
-import Single from "./pages/single/Single";
-import Write from "./pages/write/Write";
-import Settings from "./pages/settings/Settings";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useContext } from "react";
-import { Context } from "./context/Context";
+import Home from './pages/home/Home'
+import TopBar from './components/topBar/TopBar'
+import Single from './pages/single/Single'
+import Write from './pages/write/Write'
+import Settings from './pages/settings/Settings'
+import Login from './pages/login/Login'
+import Register from './pages/register/Register'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { useContext } from 'react'
+import { Context } from './context/Context'
 
-function App() {
-  const { user } = useContext(Context);
+function App () {
+  const { user } = useContext(Context)
   return (
     <Router>
       <TopBar />
@@ -27,7 +27,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
