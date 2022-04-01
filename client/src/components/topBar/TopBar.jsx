@@ -46,10 +46,11 @@ export default function TopBar () {
         </ul>
       </div>
       <div className="topRight">
-        {user ? (<Link to="/settings">
+        {user
+          ? (<Link to="/settings">
               <img className="topImg" src={PF + user.profilePic} alt=''/>
-            </Link>) : (
-            <ul className="topList">
+            </Link>)
+          : (<ul className="topList">
               <li className="topListItem">
                 <Link className="link" to="/login">
                   LOGIN
@@ -61,7 +62,7 @@ export default function TopBar () {
                 </Link>
               </li>
             </ul>
-        )}
+            )}
         <i className="topSearchIcon fas fa-search"></i>
       </div>
     </div>
