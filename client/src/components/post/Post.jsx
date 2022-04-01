@@ -1,5 +1,10 @@
 import './post.css'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+
+Post.propTypes = {
+  post: PropTypes.string
+}
 
 export default function Post ({ post }) {
   const PF = 'http://localhost:5000/images/'
@@ -9,7 +14,7 @@ export default function Post ({ post }) {
       <div className="postInfo">
         <div className="postCats">
           {post.categories.map((c) => (
-            <span className="postCat">{c.name}</span>
+            <span className="postCat" key=''>{c.name}</span>
           ))}
         </div>
         <Link to={`/post/${post._id}`} className="link">

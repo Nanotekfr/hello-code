@@ -1,5 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react'
 import Reducer from './Reducer'
+import PropTypes from 'prop-types'
 
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem('user')) || null,
@@ -16,6 +17,9 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem('user', JSON.stringify(state.user))
   }, [state.user])
 
+  ContextProvider.propTypes = {
+    children: PropTypes.string.isRequired
+  }
   return (
     <Context.Provider
       value={{
